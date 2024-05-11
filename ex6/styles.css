@@ -26,8 +26,8 @@ li {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 50rem;
-    height: 47rem;
+    width: 28rem;
+    height: 25rem;
     background: white;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     border-radius: 10px;
@@ -43,7 +43,7 @@ li {
     color: #222;
     font-weight: 700;
     text-transform: capitalize;
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-top: 0.5rem;
 }
 .card--link {
@@ -51,7 +51,7 @@ li {
     background: #db4938;
     color: white;
     margin: 0.3rem;
-    padding: 0.3rem 0.5rem;
+    padding: 0.3rem 1em;
     border-radius: 20px;
 }
 
