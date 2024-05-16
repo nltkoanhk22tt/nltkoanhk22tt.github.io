@@ -9,7 +9,7 @@ nav {
     margin-bottom: 0.5rem;
 }
 ul {
-    display: flex;
+    display: flex;  
     list-style: none;
 }
 li {
