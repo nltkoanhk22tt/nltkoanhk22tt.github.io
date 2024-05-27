@@ -34,6 +34,11 @@ const quizData =[
 ];
 let currentQuiz = 0;
 let score = 0;
+const a = document.querySelector("a")
+const b = document.querySelector("b")
+const c = document.querySelector("c")
+const d = document.querySelector("d")
+
 loadQuiz();
 
 function loadQuiz() {

@@ -2,12 +2,20 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://cssgridgarden.com/#vi">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 <body>
     <header>
             <nav class="nav">
                 <h1 class="logo">GRID GRADEN</h1>
+            <input type="checkbox" id="menu-toggler">
+            <label for="menu-toggler" id="toggler-btn">
+                <i class="bx bx-menu"></i>
+                <i class="bx bx-x"></i>
+            </label>
+
             <div class="links">
                 <a href="#lv1">level1</a>
                 <a href="#lv2">level2</a>
@@ -38,328 +46,353 @@
                 <a href="#lv27">level27</a>
                 <a href="#lv28">level28</a>
         </div>
+        <div>
+            <a href="https://cssgridgarden.com/#vi">
+             <input type="button" class="button" value="play game">
+            </a>
+         </div>
     </nav>
-    <div>
-        <a href="https://cssgridgarden.com/#vi">
-         <input type="button" class="button" value="play game">
-        </a>
-     </div>
-    </header>
+   </header>
     
 <section>
     <div class="levels">
-        <div class="level" id="level1">
+        <div class="level" id="lv1">
             <div>
-             <img src="picture1.png"/>
+                <img src="picture1.png"/>
             </div>
             <div>
-            <h1>Level1</h1>
-            <p>
-            Grid-column-start: 3;
-            </p>
-        </div>
-        </div>
-        <div class="level" id="level2">
-            <div>
-             <img src="picture2.png">
-            </div>
-            <div>
-            <h1>Level2</h1>
-            <p>
-           Grid-column-start: 5;
-            </p>
+                <h1>Level1</h1>
+                <p>
+                    Grid-column-start: 3;
+                </p>
             </div>
         </div>
-        <div class="level" id="level3">
+
+        <div class="level" id="lv2">
             <div>
-             <img src="picture3.png" />
-            </div>
-        <div>
-            <h1>Level3</h1>
-        <p>
-            Grid-column-end: 4;
-        </p>
-        </div>
-        </div>
-        <div class="level" id="level4">
-            <div>
-             <img src="picture4.png" />
-            </div>
-        <div>
-            <h1>Level4</h1>
-        <p>
-            Grid-column-end: 2;
-        </p>
-        </div>
-    </div>
-        <div class="level" id="level5">
-            <div>
-             <img src="picture5.png" />
-            </div>
-        <div>
-            <h1>Level5</h1>
-        <p>
-            Grid-column-end: -2;
-        </p>
-        </div>
-    </div>
-        <div class="level" id="level6">
-            <div>
-             <img src="picture6.png" />
-            </div>
-        <div>
-            <h1>Level6</h1>
-        <p>
-            Grid-column-start: -3;
-        </p>
-        </div>
-        </div>
-    </div>
-        <div class="level" id="level7">
-            <div>
-            <img src="picture7.png" />
+                <img src="picture2.png">
             </div>
             <div>
-            <h1>Level7</h1>
-            <p>
-            Grid-column-end: span 2;
-            </p>
+                <h1>Level2</h1>
+                <p>
+                     Grid-column-start: 5;
+                </p>
+            </div>
+        </div>
+
+        <div class="level" id="lv3">
+            <div>
+                <img src="picture3.png" />
+            </div>
+            <div>
+                <h1>Level3</h1>
+                <p>
+                    Grid-column-end: 4;
+                </p>
+            </div>
+        </div>
+
+        <div class="level" id="lv4">
+            <div>
+                <img src="picture4.png" />
+            </div>
+            <div>
+                <h1>Level4</h1>
+                <p>
+                    Grid-column-end: 2;
+                </p>
+            </div>
+        </div>
+
+        <div class="level" id="lv5">
+            <div>
+                <img src="picture5.png" />
+            </div>
+            <div>
+                <h1>Level5</h1>
+                <p>
+                    Grid-column-end: -2;
+                </p>
+            </div>
+        </div>
+
+        <div class="level" id="lv6">
+            <div>
+                <img src="picture6.png" />
+            </div>
+            <div>
+                <h1>Level6</h1>
+                <p>
+                    Grid-column-start: -3;
+                </p>
+            </div>
+        </div>
+
+        <div class="level" id="lv7">
+            <div>
+                <img src="picture7.png" />
+            </div>
+            <div>
+                <h1>Level7</h1>
+                <p>
+                    Grid-column-end: span 2;
+                </p>
              </div>
         </div>
-        <div class="level" id="level8">
+
+        <div class="level" id="lv8">
             <div>
-            <img src="picture8.png" />
+                <img src="picture8.png" />
             </div>
-        <div>
-            <h1>Level8</h1>
-        <p>
-            Grid-column-end: span 5;
-        </p>
-        </div>
-    </div>
-        <div class="level" id="level9">
             <div>
-            <img src="picture9.png" />
+                <h1>Level8</h1>
+                <p>
+                    Grid-column-end: span 5;
+                </p>
             </div>
-        <div>
-            <h1>Level9</h1>
-        <p>
-            Grid-column-start: span 3;
-        </p>
         </div>
-    </div>
+
+        <div class="level" id="lv9">
+            <div>
+                <img src="picture9.png" />
+            </div>
+            <div>
+                <h1>Level9</h1>
+                <p>
+                    Grid-column-start: span 3;
+                </p>
+            </div>
+        </div>
     
-        <div class="level" id="level10">
+        <div class="level" id="lv10">
             <div>
-            <img src="picture10.png" />
+                <img src="picture10.png" />
             </div>
-        <div>
-            <h1>Level10</h1>
-        <p>
-            Grid-column: 4/6;
-        </p>
-        </div>
-    </div>
-        <div class="level" id="level11">
             <div>
-            <img src="picture11.png" />
+                <h1>Level10</h1>
+                <p>
+                    Grid-column: 4/6;
+                </p>
             </div>
-        <div>
-            <h1>Level11</h1>
-        <p>
-            Grid-column: span 3/5; 
-        </p>
         </div>
-    </div>
-        <div class="level" id="level12">
+
+        <div class="level" id="lv11">
             <div>
-            <img src="picture12.png" />
+                <img src="picture11.png" />
             </div>
-        <div>
-            <h1>Level12</h1>
-        <p>
-            Grid-row-start: 3; 
-        </p>
-        </div>
-    </div>
-        <div class="level" id="level13">
             <div>
-            <img src="picture13.png" />
+                <h1>Level11</h1>
+                <p>
+                    Grid-column: span 3/5; 
+                </p>
             </div>
-        <div>
-            <h1>Level13</h1>
-        <p>
-            Grid-row: 3/6;
-        </p>
         </div>
-    </div>
-        <div class="level" id="level14">
+
+        <div class="level" id="lv12">
             <div>
-            <img src="picture14.png" />
+                <img src="picture12.png" />
             </div>
-        <div>
-            <h1>Level14</h1>
-        <p>
-            Grid-column: 2;
-            Grid-row: 5;
-        </p>
-        </div>
-    </div>
-        <div class="level" id="level15">
             <div>
-            <img src="picture15.png" />
+                <h1>Level12</h1>
+                <p>
+                    Grid-row-start: 3; 
+                </p>
             </div>
-        <div>
-            <h1>Level15</h1>
-        <p>
-            Grid-column: 2/6;
-            Grid-row: 1/6;
-        </p>
         </div>
-    </div>
-        <div class="level" id="level16">
+
+        <div class="level" id="lv13">
             <div>
-            <img src="picture16.png" />
+                <img src="picture13.png" />
             </div>
-        <div>
-            <h1>Level16</h1>
-        <p>
-            Grid-area: 1 / 2 / 4 / 6;
-        </p>
-        </div>
-    </div>
-        <div class="level" id="level17">
             <div>
-            <img src="picture17.png" />
+                <h1>Level13</h1>
+                <p>
+                    Grid-row: 3/6;
+                </p>
             </div>
-        <div>
-            <h1>Level17</h1>
-        <p>
-            Grid-area: 2/ 3/ 5/ 6;
-        </p>
         </div>
-    </div>
-        <div class="level" id="level18">
+
+        <div class="level" id="lv14">
             <div>
-            <img src="picture18.png" />
+                <img src="picture14.png" />
             </div>
-        <div>
-            <h1>Level18</h1>
-        <p>
-            Order: 2;
-        </p>
-        </div>
-    </div>
-        <div class="level" id="level19">
             <div>
-            <img src="picture19.png" />
+                <h1>Level14</h1>
+                <p>
+                    Grid-column: 2;
+                    Grid-row: 5;
+                </p>
             </div>
-        <div>
-            <h1>Level19</h1>
-        <p>
-            Order: -2;
-        </p>
         </div>
-    </div>
-        <div class="level" id="level20">
+
+        <div class="level" id="lv15">
             <div>
-            <img src="picture20.png" />
+                <img src="picture15.png" />
             </div>
-        <div>
-            <h1>Level20</h1>
-        <p>
-            Grid-template-columns: 50% 50%;
-        </p>
-        </div>
-    </div>
-        <div class="level" id="level21">
             <div>
-            <img src="picture21.png" />
+                <h1>Level15</h1>
+                <p>
+                    Grid-column: 2/6;
+                    Grid-row: 1/6;
+                </p>
             </div>
-        <div>
-            <h1>Level21</h1>
-        <p>
-            Grid-template-columns: repeat(8,12.5%);
-        </p>
         </div>
-    </div>
-        <div class="level" id="level22">
+
+        <div class="level" id="lv16">
             <div>
-            <img src="picture22.png" />
+                <img src="picture16.png" />
             </div>
-        <div>
-            <h1>Level22</h1>
-        <p>
-            Grid-template-columns: 100px 3em 40%;
-        </p>
-        </div>
-    </div>
-        <div class="level" id="level23">
             <div>
-            <img src="picture23.png" />
+                <h1>Level16</h1>
+                <p>
+                    Grid-area: 1 / 2 / 4 / 6;
+                </p>
             </div>
-        <div>
-            <h1>Level23</h1>
-        <p>
-            Grid-template-columns: 1fr 5fr;
-        </p>
         </div>
-    </div>
-        <div class="level" id="level24">
+
+        <div class="level" id="lv17">
             <div>
-            <img src="picture24.png"/>
+                <img src="picture17.png" />
             </div>
-        <div>
-            <h1>Level24</h1>
-        <p>
-            Grid-template-columns: 50px  1fr 1fr 1fr 50px;
-        </p>
-        </div>
-    </div>
-        <div class="level" id="level25">
             <div>
-            <img src="picture25.png" />
+                <h1>Level17</h1>
+                <p>
+                    Grid-area: 2/ 3/ 5/ 6;
+                </p>
             </div>
-        <div>
-            <h1>Level25</h1>
-        <p>
-            Grid-template-columns: 75px 3fr 2fr;
-        </p>
         </div>
-    </div>
-        <div class="level" id="level26">
+
+        <div class="level" id="lv18">
+            <div>
+                <img src="picture18.png" />
+            </div>
+            <div>
+                <h1>Level18</h1>
+                <p>
+                    Order: 2;
+                </p>
+            </div>
+        </div>
+
+        <div class="level" id="lv19">
+            <div>
+                <img src="picture19.png" />
+            </div>
+            <div>
+                <h1>Level19</h1>
+                <p>
+                    Order: -2;
+                </p>
+            </div>
+        </div>
+
+        <div class="level" id="lv20">
+            <div>
+                <img src="picture20.png" />
+            </div>
+            <div>
+                <h1>Level20</h1>
+                <p>
+                    Grid-template-columns: 50% 50%;
+                </p>
+            </div>
+        </div>
+
+        <div class="level" id="lv21">
+            <div>
+                <img src="picture21.png" />
+            </div>
+            <div>
+                <h1>Level21</h1>
+                <p>
+                    Grid-template-columns: repeat(8,12.5%);
+                </p>
+            </div>
+        </div>
+
+        <div class="level" id="lv22">
+            <div>
+                <img src="picture22.png" />
+            </div>
+            <div>
+                <h1>Level22</h1>
+                <p>
+                    Grid-template-columns: 100px 3em 40%;
+                </p>
+            </div>
+        </div>
+
+        <div class="level" id="lv23">
+            <div>
+                <img src="picture23.png" />
+            </div>
+            <div>
+                <h1>Level23</h1>
+                <p>
+                    Grid-template-columns: 1fr 5fr;
+                </p>
+            </div>
+        </div>
+
+        <div class="level" id="lv24">
+            <div>
+                <img src="picture24.png"/>
+            </div>
+            <div>
+                <h1>Level24</h1>
+                <p>
+                    Grid-template-columns: 50px  1fr 1fr 1fr 50px;
+                </p>
+            </div>
+        </div>
+
+        <div class="level" id="lv25">
+            <div>
+                <img src="picture25.png" />
+            </div>
+            <div>
+                <h1>Level25</h1>
+                <p>
+                    Grid-template-columns: 75px 3fr 2fr;
+                </p>
+            </div>
+        </div>
+
+        <div class="level" id="lv26">
             <div>
             <img src="picture26.png" />
             </div>
-        <div>
-            <h1>Level26</h1>
-        <p>
-            Grid-template-rows: 50px 0% 0% 0% ;
-        </p>
-        </div>
-    </div>
-        <div class="level" id="level27">
             <div>
-            <img src="picture27.png" />
+                <h1>Level26</h1>
+                <p>
+                    Grid-template-rows: 50px 0% 0% 0% ;
+                </p>
             </div>
-        <div>
-            <h1>Level27</h1>
-        <p>
-            Grid-template: 60% / 200px;
-        </p>
         </div>
-    </div>
+
+        <div class="level" id="lv27">
+            <div>
+                <img src="picture27.png" />
+            </div>
+            <div>
+                <h1>Level27</h1>
+                <p>
+                    Grid-template: 60% / 200px;
+                </p>
+            </div>
+        </div>
+
         <div class="level" id="lv28">
             <div>
-            <img src="picture28.png" />
+                <img src="picture28.png" />
             </div>
-        <div>
-            <h1>Level28</h1>
-        <p>
-            Grid-template: 1fr 50px/ 20% 80% ;
-        </p>
+            <div>
+                    <h1>Level28</h1>
+                <p>
+                    Grid-template: 1fr 50px/ 20% 80% ;
+                </p>
+            </div>
         </div>
-    </div>
     </div> 
 </section>
 <footer>
