@@ -21,11 +21,13 @@ h1 {
 
 .show, .hide {
     background-color: #cc89e6;
-    color: white;
     padding: 8px 15px;
     border: none;
     cursor: pointer;
     margin-top: 10px;
+    width: 100vh;
+    text-align: left;
+    border: 1px solid 10px;
 }
 
 .show:hover, .hide:hover {
