@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.Show-details {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+.Late-days {
+    margin-bottom: 20px;
+}
+
+.Hide-details {
+    display: none;
+}
+
+.show, .hide {
+    background-color: #cc89e6;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.show:hover, .hide:hover {
+    background-color: #34033b;
+}
