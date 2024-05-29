@@ -1,5 +1,7 @@
+
 body {
     font-family: Arial, sans-serif;
+    font-size: 15px;
 }
 
 .Show-details {
@@ -31,5 +33,5 @@ h1 {
 }
 
 .show:hover, .hide:hover {
-    background-color: #34033b;
+    background-color: #d441e7;
 }
