@@ -1,0 +1,43 @@
+body {
+        font-family: Arial, sans-serif;
+        font-size: 15px;
+}
+.container {  
+    
+    display: flex;
+
+    
+}
+.H11 {
+    background-color: #c467f6;
+    padding: 30px 40px;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+.List {
+    background-color: rgba(179, 179, 178, 0.877);
+    color: black;
+    text-align: left;
+}
+
+#lis {
+    display: flex;
+    justify-content: space-between;
+}
+#task {
+    width: 900px;
+    border: none;
+    height: 30px;
+}
+#addTask {
+    border: none;
+    width: 150px;
+}
+.btn {
+    border: none;
+    background-color: rgba(179, 179, 178, 0.877);
+}
