@@ -22,17 +22,21 @@ h1 {
     background-color: rgba(179, 179, 178, 0.877);
     color: black;
     text-align: left;
+   
+    
 }
 
 #lis {
     display: flex;
     justify-content: space-between;
+    margin-top: 10px;
 }
 #task {
     width: 900px;
     border: none;
     height: 30px;
     display: flex;
+    
 }
 #addTask {
     border: none;
@@ -41,4 +45,6 @@ h1 {
 .btn {
     border: none;
     background-color: rgba(179, 179, 178, 0.877);
+    
+
 }
