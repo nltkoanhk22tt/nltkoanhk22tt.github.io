@@ -1,0 +1,18 @@
+<html>
+<head>
+    <script language="javascript">
+        function moveleft(){
+        document.getElementById('header').style.position=
+        "absolute";
+        document.getElementById('header').style.left="0";
+        }
+        function moveback(){
+        document.getElementById('header').style.left="100";
+        }
+    </script>
+</head>
+<body>
+    <h1 id="header“ onmouseover="moveleft()“
+    onmouseout="moveback()"> Mouse over this text</h1>
+</body>
+</html>
