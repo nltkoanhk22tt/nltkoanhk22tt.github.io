@@ -1,0 +1,133 @@
+/* frontend/src/App.css */
+.App {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+  }
+  
+  .todo-app {
+    background-color: white;
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  header {
+    text-align: center;
+  }
+  
+  header h2 {
+    margin: 0;
+    font-size: 2em;
+  }
+  
+  header p {
+    font-size: 1em;
+    color: #666;
+  }
+  
+  input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* InputTodo */
+  .input-todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .input-todo input {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .input-todo button {
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .input-todo button:hover {
+    background-color: #45a049;
+  }
+  
+  /* TodoList - TodoItem */
+  
+  .todo-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .todo-item.completed {
+    background-color: #d3ffd3;
+  }
+  
+  .todo-item label {
+    flex: 1;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  
+  .todo-item input {
+    margin-right: 10px;
+  }
+  
+  .todo-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #4CAF50;
+  }
+  
+  .todo-actions button:hover {
+    color: #45a049;
+    transition: color 0.3s ease; 
+  }
+  
+  .todo-item input[type="text"] {
+    flex: 1;
+    padding: 5px;
+    margin-right: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }

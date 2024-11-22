@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Client-Server App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="register">
+        <h1>Register</h1>
+        <input type="text" id="firstName" placeholder="First Name">
+        <input type="text" id="lastName" placeholder="Last Name">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="register()">Register</button>
+    </div>
+
+    <div id="login" style="display: none;">
+        <h1>Login</h1>
+        <input type="email" id="loginEmail" placeholder="Email">
+        <input type="password" id="loginPassword" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+
+    <div id="post" style="display: none;">
+        <h1>Posts</h1>
+        <button onclick="logout()">Logout</button>
+        <ul id="postList"></ul>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

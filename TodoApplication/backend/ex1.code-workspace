@@ -1,0 +1,55 @@
+{
+	"folders": [
+		{
+			"path": "../../ex1"
+		},
+		{
+			"path": "../../bth3"
+		},
+		{
+			"path": "../../bt4"
+		},
+		{
+			"path": "../../bt2"
+		},
+		{
+			"path": "../../bth1"
+		},
+		{
+			"path": "../../bth4"
+		},
+		{
+			"path": "../../baitap"
+		},
+		{
+			"path": "../../kiemtra"
+		},
+		{
+			"path": "../../coffee style"
+		},
+		{
+			"path": "../../NodeJS"
+		},
+		{
+			"path": "../../Express-tut"
+		},
+		{
+			"path": "../../CSDL phi quan hệ"
+		},
+		{
+			"path": "../../RestAPI"
+		},
+		{
+			"path": "../../kiemtrathuchanh"
+		},
+		{
+			"path": "C:/webnode2"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "TodoApplication"
+	}
+}
