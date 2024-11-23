@@ -1,4 +1,4 @@
-// src/routes/index.jsx
+
 
 export default function Index() {
     return (
