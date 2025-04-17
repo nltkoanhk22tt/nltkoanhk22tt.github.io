@@ -1,0 +1,155 @@
+<main>
+	<%- include('../partials/adminSidebar') %>
+	
+	<div id="main-wrapper">
+		
+		<div class="bg-white mb-5 p-3 d-sm-flex align-items-center justify-content-between">
+			<h5 class="m-0 fw-bold color-theme">Sách</h5>
+			<div class="btn-group">
+				<a href="/admin/books/add" class="btn">Thêm sách mới</a>
+				<button class="btn" data-bs-toggle="modal" data-bs-target="#filter-modal">Lọc</button>
+				<button class="btn" data-bs-toggle="modal" data-bs-target="#sort-modal">Sắp xếp</button>
+			</div>
+		</div>
+		
+		
+		<div class="d-flex flex-wrap justify-content-center">
+			
+			<% if(books.length == 0) { %>
+				<div>Không tìm thấy sách nào.</div>
+			<% } else for(let i=0; i<books.length; i++) { %>
+				<div class="card border border-2 m-2" style="width: 18rem;">
+					<div class="card-body">
+						
+						<h5 class="card-title"> <%= books[i].title %> </h5>
+						<h6 class="card-subtitle mb-3 text-muted"> <%= books[i].authors %> </h6>
+						<div> <%= books[i].category %> </div>
+						<div> ISBN: <%= books[i].ISBN %> </div>
+						<div> Số lượng sách: <%= books[i].copiesOwned %> </div>
+						<div> Còn lại trong kho: <%= books[i].stock %> </div>
+						<div> <%= books[i].description %> </div>
+						
+						<div class="btn-group mt-3">
+							<a href="/admin/book/<%= books[i].id %>" class="btn">Chỉnh sửa</a>
+							<form class="d-none" id="hidden-form-<%= books[i].id %>" action="/admin/book/<%= books[i].id %>?_method=DELETE" method="POST"><input type="submit"></form>
+							<button onclick="confirmDelete('<%= books[i].id %>')" class="btn">Xóa</button>
+						</div>
+						
+					</div>
+				</div>
+			<% } %>
+			
+		</div>
+		
+		
+		
+		<!-- Modal Lọc -->
+		<div class="modal fade" id="filter-modal" tabindex="-1">
+			<div class="modal-dialog">
+				
+				<form class="modal-content" action="/admin/books" method="GET">
+					<div class="modal-header bg-primary text-white">
+						<h5 class="modal-title">Lọc</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					
+					<div class="modal-body p-4">
+						<div class="row mb-4">
+							<label for="filter-title" class="form-label col-2">Tiêu đề</label>
+							<div class="col-10"><input type="text" name="filter[title]" class="form-control" id="filter-title"></div>
+						</div>
+						
+						<div class="row mb-4">
+							<label for="filter-author" class="form-label col-2">Tác giả</label>
+							<div class="col-10"><input type="text" name="filter[authors]" class="form-control" id="filter-author"></div>
+						</div>
+						
+						<div class="row mb-4">
+							<label for="filter-category" class="form-label col-2">Danh mục</label>
+							<div class="col-10"><input type="text" name="filter[category]" class="form-control" id="filter-category"></div>
+						</div>
+						
+						<div class="row mb-4">
+							<label for="filter-copies-owned-min" class="form-label col-2">Số lượng sách</label>
+							<div class="col-5"><input type="number" name="filter[minCopiesOwned]" class="form-control" id="filter-copies-owned-min" placeholder="Số lượng tối thiểu.."></div>
+							<div class="col-5"><input type="number" name="filter[maxCopiesOwned]" class="form-control" id="filter-copies-owned-max" placeholder="Số lượng tối đa.."></div>
+						</div>
+						
+						<div class="row mb-4">
+							<label for="filter-stock-min" class="form-label col-2">Kho</label>
+							<div class="col-5"><input type="number" name="filter[minStock]" class="form-control" id="filter-stock-min" placeholder="Số lượng tối thiểu.."></div>
+							<div class="col-5"><input type="number" name="filter[maxStock]" class="form-control" id="filter-stock-max" placeholder="Số lượng tối đa.."></div>
+						</div>
+						
+					</div>
+					
+					<div class="modal-footer">
+						<button type="submit" class="btn">Áp dụng</button>
+					</div>
+				</form>
+
+			</div>
+		</div>
+		
+
+		<div class="modal fade" id="sort-modal" tabindex="-1">
+			<div class="modal-dialog">
+				
+				<form class="modal-content" action="/admin/books" method="GET">
+					<div class="modal-header bg-primary text-white">
+						<h5 class="modal-title">Sắp xếp theo</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					
+					<div class="modal-body">
+						<div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="sortBy" id="title-asc" value="title">
+								<label class="form-check-label" for="title-asc">Tiêu đề (Tăng dần)</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="sortBy" id="title-desc" value="-title">
+								<label class="form-check-label" for="title-desc">Tiêu đề (Giảm dần)</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="sortBy" id="copies-owned-asc" value="copiesOwned">
+								<label class="form-check-label" for="copies-owned-asc">Số lượng sách (Tăng dần)</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="sortBy" id="copies-owned-desc" value="-copiesOwned">
+								<label class="form-check-label" for="copies-owned-desc">Số lượng sách (Giảm dần)</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="sortBy" id="stock-asc" value="stock">
+								<label class="form-check-label" for="stock-asc">Kho (Tăng dần)</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="sortBy" id="stock-desc" value="-stock">
+								<label class="form-check-label" for="stock-desc">Kho (Giảm dần)</label>
+							</div>
+						</div>
+					</div>
+					
+					<div class="modal-footer">
+						<button type="submit" class="btn">Áp dụng</button>
+					</div>
+				</form>
+
+			</div>
+		</div>
+
+
+	</div>
+	
+	
+</main>
+
+<script>
+	function confirmDelete(id)
+	{
+		if(window.confirm("Bạn có chắc chắn muốn xóa cuốn sách này?\nTất cả các bản ghi liên quan đến cuốn sách này sẽ bị xóa..."))
+		{
+			document.querySelector(`#hidden-form-${id}`).submit();
+		}
+	}
+</script>

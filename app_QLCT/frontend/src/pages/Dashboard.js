@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getExpenses, addExpense } from '../services/expenseService';
+import { getExpenses, addExpense, deleteExpense } from '../services/expenseService';
 import InputExpense from '../components/InputExpense';
 import ExpenseList from '../components/ExpenseList';
 import { useNavigate } from 'react-router-dom';
@@ -33,6 +33,16 @@ const Dashboard = () => {
     }
   };
 
+  const handleDeleteExpense = async (id) => {
+    try {
+      const token = localStorage.getItem('token');
+      await deleteExpense(id, token);
+      fetchExpenses(); // Reload danh sách sau khi xóa thành công
+    } catch (error) {
+      alert('Lỗi khi xóa khoản chi tiêu!');
+    }
+  };
+
   useEffect(() => {
     fetchExpenses();
   }, []);
@@ -41,7 +51,7 @@ const Dashboard = () => {
     <div>
       <h2>Quản Lý Chi Tiêu</h2>
       <InputExpense onAdd={handleAddExpense} />
-      <ExpenseList expenses={expenses} />
+      <ExpenseList expenses={expenses} onDelete={handleDeleteExpense} />
     </div>
   );
 };

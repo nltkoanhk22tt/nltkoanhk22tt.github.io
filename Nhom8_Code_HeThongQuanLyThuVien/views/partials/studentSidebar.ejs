@@ -1,0 +1,17 @@
+<div id="sidebar">
+	<ul id="sidebar-nav">
+		<li>Chào mừng <%= currentUser.firstName ? currentUser.firstName : "Sinh viên" %></li>
+		<li><a href="/student/dashboard">Trang chủ</a></li>
+		<li><a href="/student/activities">Hoạt động</a></li>
+		<li><a href="/student/books">Sách</a></li>
+		<li><a href="/student/loans/current">Sách đang mượn</a></li>
+		<li><a href="/student/loans/previous">Sách đã mượn</a></li>
+		<li><a href="/student/rules">Quy định & Nội quy</a></li>
+		<li><a href="/student/profile">Hồ sơ của tôi</a></li>
+		<li><a href="/auth/student-logout" class="btn">Đăng xuất</a></li>
+	</ul>
+</div>
+
+<div id="toggler" class="text-center">
+	<span id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+</div>

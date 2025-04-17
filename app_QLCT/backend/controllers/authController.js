@@ -1,29 +1,37 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const User = require('../models/userModel');
+const User = require('../models/userModel'); // Cần thêm dòng này để import User model
 
-exports.register = (req, res) => {
-  const { name, email, password } = req.body;
-  const hashedPassword = bcrypt.hashSync(password, 8);
+exports.register = async (req, res) => {
+  const { email, password } = req.body;
 
-  User.create({ name, email, password: hashedPassword }, (err) => {
-    if (err) return res.status(400).json({ message: 'Error creating user' });
-    res.json({ message: 'User registered successfully' });
+  // Kiểm tra email đã tồn tại chưa
+  User.findByEmail(email, async (err, result) => {
+    if (err) return res.status(500).json({ error: err });
+    if (result.length > 0) {
+      return res.status(400).json({ message: 'Email already exists' });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    User.create({ email, password: hashedPassword }, (err, result) => {
+      if (err) return res.status(500).json({ error: err });
+      res.status(201).json({ message: 'User registered successfully' });
+    });
   });
 };
 
 exports.login = (req, res) => {
   const { email, password } = req.body;
 
-  User.findByEmail(email, (err, results) => {
-    if (err || results.length === 0) return res.status(400).json({ message: 'User not found' });
-    
-    const user = results[0];
-    const isValid = bcrypt.compareSync(password, user.password);
+  User.findByEmail(email, async (err, results) => {
+    if (err || results.length === 0)
+      return res.status(401).json({ message: 'Invalid email or password' });
 
-    if (!isValid) return res.status(401).json({ message: 'Invalid credentials' });
+    const isMatch = await bcrypt.compare(password, results[0].password);
+    if (!isMatch) return res.status(401).json({ message: 'Invalid credentials' });
 
-    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+    const token = jwt.sign({ id: results[0].id }, process.env.JWT_SECRET, { expiresIn: '1h' });
     res.json({ token });
   });
 };

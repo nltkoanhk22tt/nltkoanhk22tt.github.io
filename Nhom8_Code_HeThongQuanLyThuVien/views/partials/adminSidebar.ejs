@@ -1,0 +1,18 @@
+<div id="sidebar">
+	<ul id="sidebar-nav">
+		<li>Chào mừng <%= currentUser.firstName ? currentUser.firstName : "Quản trị viên" %></li>
+		<li><a href="/admin/dashboard">Bảng điều khiển</a></li>
+		<li><a href="/admin/activities">Hoạt động</a></li>
+		<li><a href="/admin/students">Sinh viên</a></li>
+		<li><a href="/admin/books">Sách</a></li>
+		<li><a href="/admin/issue">Mượn sách</a></li>
+		<li><a href="/admin/loans/current">Sách đang mượn</a></li>
+		<li><a href="/admin/loans/previous">Sách đã trả</a></li>
+		<li><a href="/admin/profile">Hồ sơ của tôi</a></li>
+		<li><a href="/auth/admin-logout" class="btn">Đăng xuất</a></li>
+	</ul>
+</div>
+	
+<div id="toggler" class="text-center">
+	<span id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+</div>

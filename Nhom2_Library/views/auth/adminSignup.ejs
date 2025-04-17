@@ -1,0 +1,55 @@
+<div class="bg-image-container p-5">
+	<div class="form-container bg-white m-auto p-5">
+		<form action="/auth/admin-signup" method="POST">
+			<h3 class="text-center mb-3">Đăng ký quản trị viên</h3>
+	
+			<% if(typeof errors != 'undefined') { %>
+				<% errors.forEach(function(error) { %>
+					<div class="alert alert-danger alert-dismissible fade show" role="alert">
+						<%= error.msg %>
+						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>
+				<% }); %>
+			<% } %>
+			
+			<div class="mb-3">
+				<label for="first-name" class="form-label">Họ</label>
+				<input type="text" name="firstName" class="form-control" id="first-name" placeholder="Nhập họ.." value="<%= typeof firstName != 'undefined' ? firstName : '' %>" required>
+			</div>
+			
+			<div class="mb-3">
+				<label for="last-name" class="form-label">Tên</label>
+				<input type="text" name="lastName" class="form-control" id="last-name" placeholder="Nhập tên.." value="<%= typeof lastName != 'undefined' ? lastName : '' %>" required>
+			</div>
+			
+			<div class="mb-3">
+				<label for="email" class="form-label">Địa chỉ email</label>
+				<input type="email" name="email" class="form-control" id="email" placeholder="Nhập email.." value="<%= typeof email != 'undefined' ? email : '' %>" required>
+				<div class="form-text">Chúng tôi sẽ không chia sẻ email của bạn với bất kỳ ai.</div>
+			</div>
+	
+			<div class="mb-3">
+				<label for="password1" class="form-label">Mật khẩu</label>
+				<input type="password" name="password1" class="form-control" id="password1" placeholder="Nhập mật khẩu.." value="<%= typeof password1 != 'undefined' ? password1 : '' %>" required>
+			</div>
+	
+			<div class="mb-3">
+				<label for="password2" class="form-label">Xác nhận mật khẩu</label>
+				<input type="password" name="password2" class="form-control" id="password2" placeholder="Nhập lại mật khẩu.." value="<%= typeof password2 != 'undefined' ? password2 : '' %>" required>
+			</div>
+			<button type="submit" class="btn d-block m-auto mt-4">Đăng ký</button>
+			
+			
+			<div class="mt-3">
+				<span>Đã có tài khoản?</span>
+				<a href="/auth/admin-login">Đăng nhập tại đây</a>
+			</div>
+			
+			<div>
+				<span>Bạn là sinh viên?</span>
+				<a href="/auth/student-login">Hãy đăng nhập tại đây</a>
+			</div>
+			
+		</form>
+	</div>
+</div>

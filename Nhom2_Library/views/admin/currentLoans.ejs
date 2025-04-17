@@ -1,0 +1,44 @@
+<main>
+	<%- include('../partials/adminSidebar') %>
+	
+	<div id="main-wrapper">
+		
+		<div class="bg-white mb-5 p-3 d-sm-flex align-items-center justify-content-between">
+			<h5 class="m-0 fw-bold color-theme">Danh sách sách hiện tại đang mượn</h5>
+			<a href="/admin/emails/reminder" class="btn">Gửi nhắc nhở qua Email</a>
+		</div>
+		
+		<div class="col col-sm-10 col-12 m-auto my-4" style="max-height: 75%; overflow: auto;">
+			<table class="table table-info table-striped table-hover m-0 bg-white">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Sinh viên</th>
+						<th scope="col">Tên sách</th>
+						<th scope="col">ISBN sách</th>
+						<th scope="col">Thời gian mượn</th>
+						<th scope="col">Ngày hết hạn</th>
+						<th scope="col">Trạng thái</th>
+						<th scope="col">Hành động</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% for(let i=0; i<currentLoans.length; i++) { %>
+						<tr>
+							<th scope="row"> <%= i+1 %> </th>
+							<td> <%= currentLoans[i].user.email %> </td>
+							<td> <%= currentLoans[i].book.title %> </td>
+							<td> <%= currentLoans[i].book.ISBN %> </td>
+							<td> <%= currentLoans[i].issueTime.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short"}) %> </td>
+							<td> <%= currentLoans[i].dueTime.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short"}) %> </td>
+							<td class="fw-bold text-<%= currentLoans[i].status %>"> <%= currentLoans[i].status %> </td>
+							<td> <a href="/admin/collectBook/<%= currentLoans[i]._id %>" class="btn p-0" style="font-size: 14px;"> Thu hồi sách </a> </td>
+						</tr>
+					<% } %>
+				</tbody>
+			</table>
+		</div>
+		
+		
+	</div>
+</main>
